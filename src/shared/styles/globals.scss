@@ -1,0 +1,94 @@
+@use "./reset.scss";
+@use "./variables.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    color: white;
+}
+
+body {
+    background: #030e2f;
+    font-family: "Montserrat", sans-serif;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        display: none;
+    }
+}
+
+main {
+
+    @media (max-width: 992px) {
+    }
+
+    @media (max-width: 768px) {
+    }
+
+    @media (max-width: 576px) {
+    }
+
+    @media (max-width: 375px) {
+    }
+}
+
+
+.main_layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    width: 100vw;
+    // background: url("/images/rootBg/desktopBG.png") repeat top center;
+    background-size: cover;
+
+    @media (max-width: 992px) {
+        //   background: url("/images/rootBg/tabletBG.png") repeat top center;
+    }
+
+    @media (max-width: 576px) {
+        //   background: url("/images/rootBg/mobileBG.png") repeat top center;
+    }
+
+    header,
+    footer {
+        flex-shrink: 0;
+    }
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+.container {
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding-xl-side);
+    margin: 0 auto;
+
+    @media (max-width: 992px) {
+        // max-width: var(--breakpoint-lg);
+        padding: 0 var(--container-padding-lg-side);
+    }
+
+    @media (max-width: 768px) {
+        // max-width: var(--breakpoint-md);
+        padding: 0 var(--container-padding-md-side);
+    }
+
+    @media (max-width: 576px) {
+        // max-width: var(--breakpoint-sm);
+        padding: 0 var(--container-padding-sm-side);
+        // padding: 0 var(--container-padding-xs-side);
+    }
+
+    @media (max-width: 375px) {
+        // max-width: var(--breakpoint-xs);
+        padding: 0 var(--container-padding-xs-side);
+    }
+}
