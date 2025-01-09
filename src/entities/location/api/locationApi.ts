@@ -9,15 +9,14 @@ export const locationAPI = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getLocations: build.query<getLocationsRes, void>({
       query: () => ({
-        url: `/auth/register`,
+        url: `/location/all`,
         method: `GET`,
       }),
     }),
     getLocationInfo: build.query<getLocationInfoRes, getLocationInfoReq>({
       query: (params) => ({
-        url: `/auth/register`,
+        url: `/location/${params.id}`,
         method: `GET`,
-        params,
       }),
     }),
   }),

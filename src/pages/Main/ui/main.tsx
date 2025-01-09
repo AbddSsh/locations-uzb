@@ -2,20 +2,17 @@ import { LocationPreview, useGetLocationsQuery } from "@entities/location";
 import { LocationsList } from "@widgets/locations-list";
 import { MainSlider } from "@widgets/main-slider";
 import { Loader } from "@shared/ui";
-import { locationsMock } from "@shared/config";
 
 export const MainPage = () => {
-  // const {data: locations, isLoading, isFetching} = useGetLocationsQuery()
-  const locatios: LocationPreview[] = locationsMock;
-  const isLoading = false;
+  const { data: locations, isLoading, isFetching } = useGetLocationsQuery();
   return (
     <section className="">
-      {isLoading ? (
+      {isLoading || isFetching ? (
         <Loader />
       ) : (
         <>
-          <MainSlider locations={locatios} />
-          <LocationsList locations={locatios} />
+          <MainSlider locations={locations as LocationPreview[]} />
+          <LocationsList locations={locations as LocationPreview[]} />
         </>
       )}
     </section>

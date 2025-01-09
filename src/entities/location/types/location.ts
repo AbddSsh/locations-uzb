@@ -1,8 +1,8 @@
 export interface LocationPreview {
+  id: string;
   title: string;
   description: string;
   date: string;
-  id: string;
   image_url: string;
 }
 
@@ -13,6 +13,7 @@ export interface LocationPageContent {
   date: string;
   image_url: string;
   content: {
+    id?: number;
     type: LocationContentType;
     content: string;
   }[];
